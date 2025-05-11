@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- 1. LOGIN -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mine.pl.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_setup"
+            app:destination="@id/setupFragment">
+            <argument android:name="username" app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+    </fragment>
+
+    <!-- 2. SETUP -->
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.mine.pl.SetupFragment"
+        android:label="Setup"
+        tools:layout="@layout/fragment_setup">
+        <argument android:name="username" app:argType="string" android:defaultValue="" />
+        <action
+            android:id="@+id/action_setup_to_interests"
+            app:destination="@id/interestsFragment">
+            <argument android:name="username" app:argType="string" />
+        </action>
+    </fragment>
+
+    <!-- 3. INTERESTS -->
+    <fragment
+        android:id="@+id/interestsFragment"
+        android:name="com.mine.pl.InterestsFragment"
+        android:label="Select Your Interests"
+        tools:layout="@layout/fragment_interests">
+        <argument android:name="username" app:argType="string" />
+        <action
+            android:id="@+id/action_interests_to_home"
+            app:destination="@id/homeFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+    </fragment>
+
+    <!-- 4. HOME -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mine.pl.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <argument android:name="username" app:argType="string" />
+        <argument android:name="interests" app:argType="string[]" />
+
+        <action
+            android:id="@+id/action_home_to_task"
+            app:destination="@id/taskFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="taskId" app:argType="string" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+
+        <action
+            android:id="@+id/action_home_to_result"
+            app:destination="@id/resultFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="quizData" app:argType="com.mine.pl.Question[]" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+
+        <!-- LOGOUT action: clears back-stack and returns to Login -->
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- 5. TASK -->
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.mine.pl.TaskFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_task">
+        <argument android:name="username" app:argType="string" />
+        <argument android:name="taskId" app:argType="string" />
+        <argument android:name="interests" app:argType="string[]" />
+
+        <action
+            android:id="@+id/action_task_to_result"
+            app:destination="@id/resultFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="taskId" app:argType="string" />
+            <argument android:name="answers" app:argType="string[]" />
+            <argument android:name="quizData" app:argType="com.mine.pl.Question[]" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+    </fragment>
+
+    <!-- 6. RESULT -->
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.mine.pl.ResultFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_result">
+        <argument android:name="username" app:argType="string" />
+        <argument android:name="quizData" app:argType="com.mine.pl.Question[]" />
+        <argument android:name="interests" app:argType="string[]" />
+
+        <action
+            android:id="@+id/action_result_to_home"
+            app:destination="@id/homeFragment">
+            <argument android:name="username" app:argType="string" />
+            <argument android:name="interests" app:argType="string[]" />
+        </action>
+    </fragment>
+
+</navigation>

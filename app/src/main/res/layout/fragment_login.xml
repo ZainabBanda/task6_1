@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Headline -->
+    <TextView
+        style="@style/TextAppearance.Pl.Headline"
+        android:text="Welcome,\nStudent!"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Username field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:hint="Username"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:boxBackgroundMode="outline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Login button -->
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Pl.Button"
+        android:id="@+id/btnLogin"
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- tappable signup prompt -->
+    <TextView
+        android:id="@+id/tvNeedAccount"
+        style="@style/TextAppearance.Pl.Subtitle"
+        android:text="Need an account? Sign up"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"/>
+</LinearLayout>

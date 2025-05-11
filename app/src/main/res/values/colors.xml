@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- your brand palette -->
+    <color name="pl_blue_end">#4A90E2</color>
+    <color name="pl_green_accent">#99FF66</color>
+
+    <!-- utility colours -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- pill background for “you have X task due” -->
+    <color name="lightTaskPill">#CCFFFFFF</color>
+</resources>

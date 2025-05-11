@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Pl.MaterialCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:minHeight="120dp"
+    app:cardBackgroundColor="@color/pl_blue_end"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+<LinearLayout
+android:orientation="horizontal"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <!-- Left: title / description / Next button -->
+<LinearLayout
+android:orientation="vertical"
+android:layout_width="0dp"
+android:layout_weight="1"
+android:layout_height="wrap_content">
+
+<TextView
+    android:id="@+id/tvTaskTitle"
+    style="@style/TextAppearance.Pl.Headline"
+    android:textSize="18sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+<TextView
+    android:id="@+id/tvTaskDesc"
+    style="@style/TextAppearance.Pl.Subtitle"
+    android:textSize="14sp"
+    android:layout_marginTop="4dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btnNext"
+    style="@style/Widget.Pl.Button"
+    android:layout_marginTop="8dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="36dp"
+    app:icon="@drawable/ic_arrow_forward"
+    app:iconGravity="textStart"
+    app:iconPadding="4dp"/>
+</LinearLayout>
+
+
+<FrameLayout
+android:layout_width="40dp"
+android:layout_height="40dp"
+android:layout_gravity="center_vertical">
+
+<androidx.appcompat.widget.SwitchCompat
+    android:id="@+id/switchComplete"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"/>
+</FrameLayout>
+    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>

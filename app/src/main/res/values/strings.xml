@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">pl</string>
+    <string name="avatar">Avatar</string>
+    <string name="notifications">Notifications</string>
+    <string-array name="empty_string_array"/>
+</resources>
